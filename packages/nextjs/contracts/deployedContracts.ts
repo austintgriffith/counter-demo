@@ -4,6 +4,47 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    Counter: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          type: "function",
+          name: "count",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "increment",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "CounterIncremented",
+          inputs: [
+            {
+              name: "newCount",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+      ],
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
